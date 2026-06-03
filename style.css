@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0f172a; /* 고급스러운 다크 블루/그레이 톤 */
+  background: #0f172a;
   color: #f8fafc;
   min-height: 100vh;
   padding: 40px 20px;
@@ -36,7 +36,7 @@ header p {
 
 #projects {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2열 구조 */
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
   width: 100%;
   max-width: 900px;
@@ -65,16 +65,15 @@ header p {
   background: #000;
 }
 
-/* iframe 내부의 p5.js 캔버스를 비율에 맞게 축소하여 대시보드에 안착시킴 */
 #projects .cell iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 800px;  /* 넉넉한 캔버스 기본 너비 */
-  height: 450px; /* 16:9 비율 높이 */
+  width: 800px;
+  height: 450px;
   border: none;
   transform-origin: top left;
-  transform: scale(0.5); /* 0.5배 축소하여 그리드 셀 안에 꽉 차게 함 */
+  transform: scale(0.5);
 }
 
 footer {
@@ -84,7 +83,6 @@ footer {
   font-size: 0.85rem;
 }
 
-/* 모바일 화면 대응 */
 @media (max-width: 768px) {
   #projects {
     grid-template-columns: 1fr;
