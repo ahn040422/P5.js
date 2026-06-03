@@ -36,11 +36,11 @@ header .subtitle {
   color: #94a3b8;
 }
 
+/* 화면이 넓을 때 상자들이 배치되는 구역 */
 #projects {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
-  max-width: 950px; /* 전체 그리드 영역의 최대 가로폭 조절 */
+  width: auto; /* 고정 크기 셀들이 들어가므로 가로폭을 자동으로 설정 */
   gap: 24px;
 }
 
@@ -65,7 +65,7 @@ header .subtitle {
   top: 0;
   left: 0;
   border: none;
-  transform-origin: top left; /* 축소/확대 기준점을 왼쪽 상단으로 고정 */
+  transform-origin: top left;
 }
 
 .overlay {
@@ -121,29 +121,31 @@ footer {
    🚨 크기 및 비율 조절 영역 (기능 조작 코드는 일절 없음)
    ========================================================== */
 
-/* [과제 2] 세로가 더 긴 캐릭터 작품 스타일링 */
+/* [과제 2] 세로가 더 긴 캐릭터 작품 (400 * 600 세팅) */
 #projects .cell.type-a {
-  aspect-ratio: 0.82 / 1; /* [수동조절] 카드 틀의 가로/세로 비율 (여백에 따라 0.8 ~ 0.9 사이 조절) */
+  width: 400px;  /* [수동조절] 카드 상자의 실제 가로 픽셀 크기 */
+  height: 600px; /* [수동조절] 카드 상자의 실제 세로 픽셀 크기 */
 }
 #projects .cell.type-a iframe {
-  width: 400px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
-  height: 600px; /* [수동조절] 스크롤바가 안 생기도록 세로 길이를 살짝 여유 있게 설정 */
-  transform: scale(1.12); /* [수동조절] 테두리에 딱 맞게 작품을 확대/축소하는 배율 */
+  width: 400px;  /* [수동조절] 내부 p5.js 스케치의 원래 가로 크기 */
+  height: 600px; /* [수동조절] 내부 p5.js 스케치의 원래 세로 크기 */
+  transform: scale(1); /* [수동조절] 고정 크기이므로 배율 축소 없이 1대1 매칭 */
 }
 
-/* [과제 1, 3, 4] 가로가 긴 미디어 아트 작품 스타일링 */
+/* [과제 1, 3, 4] 가로가 긴 미디어 아트 작품 (600 * 400 세팅) */
 #projects .cell.type-b {
-  aspect-ratio: 1.35 / 1; /* [수동조절] 카드 틀의 가로/세로 비율 (여백에 따라 1.3 ~ 1.5 사이 조절) */
+  width: 600px;  /* [수동조절] 카드 상자의 실제 가로 픽셀 크기 */
+  height: 400px; /* [수동조절] 카드 상자의 실제 세로 픽셀 크기 */
 }
 #projects .cell.type-b iframe {
-  width: 600px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
-  height: 400px; /* [수동조절] 검은 하단 여백을 없애기 위한 iframe의 세로 해상도 */
-  transform: scale(0.81); /* [수동조절] 테두리에 딱 맞게 작품을 확대/축소하는 배율 */
+  width: 600px;  /* [수동조절] 내부 p5.js 스케치의 원래 가로 크기 */
+  height: 400px; /* [수동조절] 내부 p5.js 스케치의 원래 세로 크기 */
+  transform: scale(1); /* [수동조절] 고정 크기이므로 배율 축소 없이 1대1 매칭 */
 }
 
-@media (max-width: 640px) {
+/* 모바일 등 화면이 작아질 때 1열 배치 및 크기 다운스케일 */
+@media (max-width: 1250px) {
   #projects {
-    grid-template-columns: 1fr;
-    max-width: 450px;
+    grid-template-columns: 1fr; /* 화면 좁아지면 가로 1열로 정렬 */
   }
 }
