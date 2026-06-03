@@ -40,7 +40,7 @@ header .subtitle {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  max-width: 900px;
+  max-width: 950px; /* 전체 그리드 영역의 최대 가로폭 조절 */
   gap: 24px;
 }
 
@@ -60,16 +60,14 @@ header .subtitle {
   border-color: rgba(99, 102, 241, 0.4);
 }
 
-/* 마우스 휠, 클릭 조작이 원활하게 작동하도록 방해 요소를 제거 */
 #projects .cell iframe {
   position: absolute;
   top: 0;
   left: 0;
   border: none;
-  transform-origin: top left;
+  transform-origin: top left; /* 축소/확대 기준점을 왼쪽 상단으로 고정 */
 }
 
-/* 마우스 오버 시 글씨가 작품 조작을 방해하지 않도록 통과 설정 */
 .overlay {
   position: absolute;
   bottom: 0;
@@ -119,24 +117,28 @@ footer {
   color: #64748b;
 }
 
-/* 과제 2 (정사각형 1:1 틀 및 축소 비율 세팅 - 스크롤바 제거) */
+/* ==========================================================
+   🚨 크기 및 비율 조절 영역 (기능 조작 코드는 일절 없음)
+   ========================================================== */
+
+/* [과제 2] 세로가 더 긴 캐릭터 작품 스타일링 */
 #projects .cell.type-a {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 0.82 / 1; /* [수동조절] 카드 틀의 가로/세로 비율 (여백에 따라 0.8 ~ 0.9 사이 조절) */
 }
 #projects .cell.type-a iframe {
-  width: 550px;  /* 스크롤바가 안 생기도록 내부 폭을 넉넉히 설정 */
-  height: 550px;
-  transform: scale(0.8); /* 상자 크기에 맞게 이쁘게 축소 */
+  width: 410px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
+  height: 500px; /* [수동조절] 스크롤바가 안 생기도록 세로 길이를 살짝 여유 있게 설정 */
+  transform: scale(1.12); /* [수동조절] 테두리에 딱 맞게 작품을 확대/축소하는 배율 */
 }
 
-/* 과제 1, 3, 4 (가로형 1.5:1 틀 및 축소 비율 세팅 - 잘림 해결) */
+/* [과제 1, 3, 4] 가로가 긴 미디어 아트 작품 스타일링 */
 #projects .cell.type-b {
-  aspect-ratio: 1.5 / 1;
+  aspect-ratio: 1.35 / 1; /* [수동조절] 카드 틀의 가로/세로 비율 (여백에 따라 1.3 ~ 1.5 사이 조절) */
 }
 #projects .cell.type-b iframe {
-  width: 650px;  /* 작품이 잘리지 않도록 넉넉한 캔버스 확보 */
-  height: 450px;
-  transform: scale(0.67); /* 원본이 꽉 차게 배율 조정 */
+  width: 550px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
+  height: 410px; /* [수동조절] 검은 하단 여백을 없애기 위한 iframe의 세로 해상도 */
+  transform: scale(0.81); /* [수동조절] 테두리에 딱 맞게 작품을 확대/축소하는 배율 */
 }
 
 @media (max-width: 640px) {
