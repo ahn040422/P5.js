@@ -126,8 +126,8 @@ footer {
   aspect-ratio: 0.82 / 1; /* [수동조절] 카드 틀의 가로/세로 비율 (여백에 따라 0.8 ~ 0.9 사이 조절) */
 }
 #projects .cell.type-a iframe {
-  width: 410px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
-  height: 500px; /* [수동조절] 스크롤바가 안 생기도록 세로 길이를 살짝 여유 있게 설정 */
+  width: 400px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
+  height: 600px; /* [수동조절] 스크롤바가 안 생기도록 세로 길이를 살짝 여유 있게 설정 */
   transform: scale(1.12); /* [수동조절] 테두리에 딱 맞게 작품을 확대/축소하는 배율 */
 }
 
@@ -136,8 +136,8 @@ footer {
   aspect-ratio: 1.35 / 1; /* [수동조절] 카드 틀의 가로/세로 비율 (여백에 따라 1.3 ~ 1.5 사이 조절) */
 }
 #projects .cell.type-b iframe {
-  width: 550px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
-  height: 410px; /* [수동조절] 검은 하단 여백을 없애기 위한 iframe의 세로 해상도 */
+  width: 600px;  /* [수동조절] p5.js 실제 크기에 맞춘 iframe의 가로 해상도 */
+  height: 400px; /* [수동조절] 검은 하단 여백을 없애기 위한 iframe의 세로 해상도 */
   transform: scale(0.81); /* [수동조절] 테두리에 딱 맞게 작품을 확대/축소하는 배율 */
 }
 
