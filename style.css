@@ -60,16 +60,16 @@ header .subtitle {
   border-color: rgba(99, 102, 241, 0.4);
 }
 
+/* 마우스 휠, 클릭 조작이 원활하게 작동하도록 방해 요소를 제거 */
 #projects .cell iframe {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   border: none;
-  transform: translate(-50%, -50%) scale(1);
-  transform-origin: center;
-  pointer-events: none;
+  transform-origin: top left;
 }
 
+/* 마우스 오버 시 글씨가 작품 조작을 방해하지 않도록 통과 설정 */
 .overlay {
   position: absolute;
   bottom: 0;
@@ -81,9 +81,9 @@ header .subtitle {
   flex-direction: column;
   gap: 6px;
   justify-content: flex-end;
-  height: 50%;
+  height: 40%;
   opacity: 0.9;
-  transition: opacity 0.3s ease;
+  pointer-events: none; 
 }
 
 .overlay h3 {
@@ -119,20 +119,24 @@ footer {
   color: #64748b;
 }
 
+/* 과제 2 (정사각형 1:1 틀 및 축소 비율 세팅 - 스크롤바 제거) */
 #projects .cell.type-a {
   aspect-ratio: 1 / 1;
 }
 #projects .cell.type-a iframe {
-  width: 400px;
-  height: 400px;
+  width: 550px;  /* 스크롤바가 안 생기도록 내부 폭을 넉넉히 설정 */
+  height: 550px;
+  transform: scale(0.8); /* 상자 크기에 맞게 이쁘게 축소 */
 }
 
+/* 과제 1, 3, 4 (가로형 1.5:1 틀 및 축소 비율 세팅 - 잘림 해결) */
 #projects .cell.type-b {
   aspect-ratio: 1.5 / 1;
 }
 #projects .cell.type-b iframe {
-  width: 600px;
-  height: 400px;
+  width: 650px;  /* 작품이 잘리지 않도록 넉넉한 캔버스 확보 */
+  height: 450px;
+  transform: scale(0.67); /* 원본이 꽉 차게 배율 조정 */
 }
 
 @media (max-width: 640px) {
