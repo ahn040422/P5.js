@@ -1,92 +1,51 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>p5.js Visual Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0f172a; /* 고급스러운 다크 블루/그레이 톤 */
-  color: #f8fafc;
-  min-height: 100vh;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  <header>
+    <h1>p5.js Visual Portfolio</h1>
+    <p>지금까지 수행한 4가지 미디어 아트 작품을 소개합니다.</p>
+  </header>
 
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
+  <main id="projects">
+    <div class="cell-container">
+      <div class="cell-title">과제 1: 정적 시각 예술</div>
+      <div class="cell">
+        <iframe src="homework1/index.html" scrolling="no"></iframe>
+      </div>
+    </div>
 
-header h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #38bdf8, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
-}
+    <div class="cell-container">
+      <div class="cell-title">과제 4: 인터랙티브 모션</div>
+      <div class="cell">
+        <iframe src="homework4/index.html" scrolling="no"></iframe>
+      </div>
+    </div>
 
-header p {
-  color: #94a3b8;
-  font-size: 1rem;
-}
+    <div class="cell-container">
+      <div class="cell-title">과제 2: 패턴과 도형 연구</div>
+      <div class="cell">
+        <iframe src="homework2/index.html" scrolling="no"></iframe>
+      </div>
+    </div>
 
-#projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2열 구조 */
-  gap: 24px;
-  width: 100%;
-  max-width: 900px;
-}
+    <div class="cell-container">
+      <div class="cell-title">과제 3: 동적 알고리즘 아트</div>
+      <div class="cell">
+        <iframe src="homework3/index.html" scrolling="no"></iframe>
+      </div>
+    </div>
+  </main>
 
-.cell-container {
-  background: #1e293b;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  border: 1px solid #334155;
-}
+  <footer>
+    <p>© 2026 ahn040422. All rights reserved.</p>
+  </footer>
 
-.cell-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #38bdf8;
-  margin-bottom: 12px;
-}
-
-#projects .cell {
-  aspect-ratio: 16 / 9;
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  background: #000;
-}
-
-/* iframe 내부의 p5.js 캔버스를 비율에 맞게 축소하여 대시보드에 안착시킴 */
-#projects .cell iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 800px;  /* 넉넉한 캔버스 기본 너비 */
-  height: 450px; /* 16:9 비율 높이 */
-  border: none;
-  transform-origin: top left;
-  transform: scale(0.5); /* 0.5배 축소하여 그리드 셀 안에 꽉 차게 함 */
-}
-
-footer {
-  margin-top: auto;
-  padding-top: 40px;
-  color: #64748b;
-  font-size: 0.85rem;
-}
-
-/* 모바일 화면 대응 */
-@media (max-width: 768px) {
-  #projects {
-    grid-template-columns: 1fr;
-  }
-}
+</body>
+</html>
